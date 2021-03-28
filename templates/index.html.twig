@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block body %}
+
+    {% if DELIVERIES %}
+        <ul>
+            {% for DELIVERY in DELIVERIES %}
+                <li>{{ DELIVERY.DELIVERY_NAME }}
+                    Цена доставки: {{ DELIVERY.PRICE }} руб.
+                    Минимальный срок доставки(дней): {{ DELIVERY.PERIOD_MIN }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+{% endblock %}
